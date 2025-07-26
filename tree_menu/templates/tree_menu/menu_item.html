@@ -1,0 +1,13 @@
+{% load menu_tags %}
+
+<li class="menu-item {% if item.is_active %}active{% endif %}">
+    <a href="{{ item.get_absolute_url }}" class="menu-link">{{ item.name }}</a>
+    
+    {% if item.children_list and item.is_expanded %}
+        <ul class="submenu-list">
+            {% for child in item.children_list %}
+                {% include 'tree_menu/menu_item.html' with item=child %}
+            {% endfor %}
+        </ul>
+    {% endif %}
+</li>

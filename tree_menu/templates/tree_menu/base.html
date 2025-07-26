@@ -1,0 +1,56 @@
+{% load static %}
+{% load menu_tags %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Меню{% endblock %}</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background-color: #f4f4f4; color: #333; }
+        h1 { color: #0056b3; }
+        .content { background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+
+        .menu-list { list-style: none; padding: 0; margin: 0; background-color: #333; border-radius: 5px; overflow: hidden; }
+        .menu-item { position: relative; }
+        .menu-link {
+            display: block;
+            padding: 10px 15px;
+            color: #fff;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        .menu-link:hover { background-color: #575757; }
+        .menu-item.active > .menu-link {
+            background-color: #007bff;
+            font-weight: bold;
+        }
+        .submenu-list {
+            list-style: none;
+            padding-left: 20px;
+            background-color: #444;
+        }
+        .submenu-list .menu-link { color: #ddd; }
+        .submenu-list .menu-link:hover { background-color: #666; }
+        .submenu-list .menu-item.active > .menu-link { background-color: #0056b3; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>{% block page_title_display %}{{ page_title }}{% endblock %}</h1>
+    </header>
+    <nav>
+        <h2>Основное меню</h2>
+        {% draw_menu 'main_menu' %}
+
+        <h2 style="margin-top: 20px;">Другое меню</h2>
+        {% draw_menu 'another_menu' %}
+    </nav>
+    <main class="content">
+        {% block content %}
+            <p>Добро пожаловать на демонстрационную страницу меню.</p>
+            <p>Попробуйте перейти по ссылкам в меню слева.</p>
+        {% endblock %}
+    </main>
+</body>
+</html>

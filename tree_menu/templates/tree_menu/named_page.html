@@ -1,0 +1,8 @@
+{% extends 'tree_menu/base.html' %}
+
+{% block title %}{{ page_title }}{% endblock %}
+
+{% block content %}
+    <p>Вы находитесь на именованной странице.</p>
+    <p>Текущий URL: {{ request.path }}</p>
+{% endblock %}
