@@ -1,0 +1,112 @@
+[
+{
+  "model": "tree_menu.menu",
+  "pk": 1,
+  "fields": {
+    "name": "main_menu"
+  }
+},
+{
+  "model": "tree_menu.menu",
+  "pk": 2,
+  "fields": {
+    "name": "another_menu"
+  }
+},
+{
+  "model": "tree_menu.menuitem",
+  "pk": 10,
+  "fields": {
+    "menu": 1,
+    "name": "Главная",
+    "url": "/",
+    "named_url": null,
+    "parent": null,
+    "order": 0
+  }
+},
+{
+  "model": "tree_menu.menuitem",
+  "pk": 11,
+  "fields": {
+    "menu": 1,
+    "name": "О нас",
+    "url": "/page/about/",
+    "named_url": null,
+    "parent": null,
+    "order": 0
+  }
+},
+{
+  "model": "tree_menu.menuitem",
+  "pk": 12,
+  "fields": {
+    "menu": 1,
+    "name": "Услуги",
+    "url": "/page/services/",
+    "named_url": null,
+    "parent": null,
+    "order": 0
+  }
+},
+{
+  "model": "tree_menu.menuitem",
+  "pk": 13,
+  "fields": {
+    "menu": 1,
+    "name": "Консалтинг",
+    "url": "/page/services/consulting/",
+    "named_url": null,
+    "parent": 12,
+    "order": 0
+  }
+},
+{
+  "model": "tree_menu.menuitem",
+  "pk": 14,
+  "fields": {
+    "menu": 1,
+    "name": "Разработка",
+    "url": "/page/services/development/",
+    "named_url": null,
+    "parent": 12,
+    "order": 0
+  }
+},
+{
+  "model": "tree_menu.menuitem",
+  "pk": 15,
+  "fields": {
+    "menu": 1,
+    "name": "Контакты",
+    "url": null,
+    "named_url": "tree_menu:named_page",
+    "parent": null,
+    "order": 0
+  }
+},
+{
+  "model": "tree_menu.menuitem",
+  "pk": 16,
+  "fields": {
+    "menu": 2,
+    "name": "Пункт 1",
+    "url": "/page/item1/",
+    "named_url": null,
+    "parent": null,
+    "order": 0
+  }
+},
+{
+  "model": "tree_menu.menuitem",
+  "pk": 17,
+  "fields": {
+    "menu": 2,
+    "name": "Пункт 2",
+    "url": "/page/item2/",
+    "named_url": null,
+    "parent": null,
+    "order": 0
+  }
+}
+]

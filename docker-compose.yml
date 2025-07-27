@@ -1,7 +1,10 @@
 services:
   web:
     build: .
-    command: python manage.py runserver 0.0.0.0:8000 --settings=django_menu.settings
+    command: |
+      sh -c "python manage.py migrate --settings=django_menu.settings &&
+             python manage.py loaddata db.json --settings=django_menu.settings &&
+             python manage.py runserver 0.0.0.0:8000 --settings=django_menu.settings"
     volumes:
       - .:/app
     ports:
